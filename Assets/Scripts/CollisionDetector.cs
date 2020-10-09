@@ -17,6 +17,7 @@ public class CollisionDetector : MonoBehaviour
 		if (PlayerPosition.position.y < -1f)
         {
 			movement.enabled = false;
+			FindObjectOfType<GameManager>().ShowEndScreen();
 		}
 	}
 }
