@@ -18,7 +18,7 @@ public class CollisionDetector : MonoBehaviour
 	}
 	void IssueGameEnd(string HowGameEnd)
     {
-		Debug.Log(HowGameEnd);
+//		Debug.Log(HowGameEnd);
 		movement.enabled = false;
 		FindObjectOfType<ScoreCalculator>().enabled = false;
 		FindObjectOfType<GameManager>().ShowEndScreen();
