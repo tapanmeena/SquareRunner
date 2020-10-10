@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    public GameManager gm;
 
-    float ForwardForce = 500f;
-    float SidewardForce = 30f;
+    float ForwardForce = 1500f, SidewardForce = 30f;
     bool MoveLeft = false, MoveRight = false;
 
-    public GameManager gm;
     void FixedUpdate()
     {
 //        Debug.Log(Mathf.Floor(Time.time));
@@ -27,9 +26,7 @@ public class PlayerMovement : MonoBehaviour
             MoveRight = false;
         }
         if(Input.GetKey("r"))
-        {
-            gm.RestartLevel();  
-        }
+            gm.RestartLevel();
     }
 
     void Update()
