@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
 
-    float ForwardForce = 500f;
+    float ForwardForce = 1500f;
     float SidewardForce = 30f;
     bool MoveLeft = false, MoveRight = false;
 
