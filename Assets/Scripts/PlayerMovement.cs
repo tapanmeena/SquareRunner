@@ -14,15 +14,15 @@ public class PlayerMovement : MonoBehaviour
     {
 //        Debug.Log(Mathf.Floor(Time.time));
         if(Input.GetAxis("Vertical") > 0)
-            rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
+            rb.AddForce(0, 0, ForwardForce * Time.fixedDeltaTime );
         if(MoveLeft)
         {
-            rb.AddForce( - SidewardForce * Time.deltaTime, 0, 0, ForceMode.Impulse);
+            rb.AddForce( - SidewardForce * Time.fixedDeltaTime, 0, 0, ForceMode.Impulse);
             MoveLeft = false;
         }
         if(MoveRight)
         {
-            rb.AddForce(SidewardForce * Time.deltaTime, 0, 0, ForceMode.Impulse);
+            rb.AddForce(SidewardForce * Time.fixedDeltaTime, 0, 0, ForceMode.Impulse);
             MoveRight = false;
         }
         if(Input.GetKey("r"))
