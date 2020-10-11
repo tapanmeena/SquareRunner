@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -7,10 +8,10 @@ public class GameManager : MonoBehaviour
 //    float Delay = 3f;
     public Text ScoreText, ShowCurrentScore, HighscoreText;
     public GameObject GameoverPanel;
+    public GameObject obstacle;
     public void ShowEndScreen()
     {
         Debug.Log("GAME OVER!!!!!!\n You Suck");
-//        Debug.Log("Score you got is " + ScoreText.text);
         ShowCurrentScore.text = ScoreText.text;
         HighscoreUpdater();
         Invoke("AddDelay", 2);
@@ -26,6 +27,9 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        //        Debug.Log(obstacle.transform);
+        //        Instantiate(obstacle);
+
         HighscoreText.text = PlayerPrefs.GetInt("highscore",0).ToString();
     }
     public void RestartLevel()
@@ -35,16 +39,19 @@ public class GameManager : MonoBehaviour
     void AddDelay()
     {
         GameoverPanel.SetActive(true);
-//        Invoke(nameof(RestartLevel), Delay);
-//        Debug.Log("After 2 seconds");
     }
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void MainScreen()
+    public void RetrnToMenuScreen()
     {
-//        SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex.)
+        SceneManager.LoadScene("MenuScreen");
     }
+
+    //public void RandomObstacleGeneration()
+    //{
+
+    //}
 }
