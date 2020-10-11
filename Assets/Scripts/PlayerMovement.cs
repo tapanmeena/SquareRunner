@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 //        Debug.Log(Mathf.Floor(Time.time));
-        if(Input.GetKey("w"))
+        if(Input.GetAxis("Vertical") > 0)
             rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
         if(MoveLeft)
         {
@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
-
         if (x < 0)
             MoveLeft = true;
         if (x > 0)
