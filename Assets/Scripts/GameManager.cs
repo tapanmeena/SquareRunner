@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void RetrnToMenuScreen()
+    public void ReturnToMenuScreen()
     {
         SceneManager.LoadScene("MenuScreen");
     }

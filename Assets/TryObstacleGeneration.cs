@@ -53,11 +53,11 @@ public class TryObstacleGeneration : MonoBehaviour
 
     void DestroyObstacle()
     {
-        DestroyTime = Time.time + DestroyDelay;
-        Debug.Log("Before Top of the Queue "+GameObjectsQueue.Peek());
-        DestroyImmediate(GameObjectsQueue.Peek(),true);
-        GameObjectsQueue.Dequeue();
-        Debug.Log("After Top of the Queue "+GameObjectsQueue.Peek());
+        //DestroyTime = Time.time + DestroyDelay;
+        //Debug.Log("Before Top of the Queue "+GameObjectsQueue.Peek());
+        //DestroyImmediate(GameObjectsQueue.Peek(),true);
+        //GameObjectsQueue.Dequeue();
+        //Debug.Log("After Top of the Queue "+GameObjectsQueue.Peek());
     }
     void SpawnObstacle()
     {

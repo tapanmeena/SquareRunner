@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ObstacleDestroyer.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\EndlessGround.cs" />
