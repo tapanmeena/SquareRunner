@@ -7,22 +7,22 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public GameManager gm;
 
-    float ForwardForce = 1500f, SidewardForce = 30f;
+    float ForwardForce = 1500f, SidewardForce = 40f;
     bool MoveLeft = false, MoveRight = false;
 
     void FixedUpdate()
     {
 //        Debug.Log(Mathf.Floor(Time.time));
         if(Input.GetAxis("Vertical") > 0)
-            rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
+        rb.AddForce(0, 0, ForwardForce * Time.fixedDeltaTime);
         if(MoveLeft)
         {
-            rb.AddForce( - SidewardForce * Time.deltaTime, 0, 0, ForceMode.Impulse);
+            rb.AddForce( - SidewardForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
             MoveLeft = false;
         }
         if(MoveRight)
         {
-            rb.AddForce(SidewardForce * Time.deltaTime, 0, 0, ForceMode.Impulse);
+            rb.AddForce(SidewardForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
             MoveRight = false;
         }
         if(Input.GetKey("r"))

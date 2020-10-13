@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System.Collections;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,12 +11,26 @@ public class GameManager : MonoBehaviour
     public Text ScoreText, ShowCurrentScore, HighscoreText;
     public GameObject GameoverPanel;
     public GameObject obstacle;
+    readonly float slowness = 10f;
     public void ShowEndScreen()
     {
         Debug.Log("GAME OVER!!!!!!\n You Suck");
         ShowCurrentScore.text = ScoreText.text;
         HighscoreUpdater();
-        Invoke("AddDelay", 2);
+        StartCoroutine(AddCoolEffect());
+//        AddDelay();
+        Invoke(nameof(AddDelay), 2);
+    }
+
+    IEnumerator AddCoolEffect()
+    {
+        Time.timeScale = 1f / slowness;
+        Time.fixedDeltaTime /=  slowness;
+
+        yield return new WaitForSeconds(1f/slowness);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime *= slowness;
     }
 
     void HighscoreUpdater()
