@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TryObstacleGeneration : MonoBehaviour
 {
-	float SpawnDelay = 5f, SpawnTime = 0f, DestroyTime = 12f, DestroyDelay = 5f;
+	float SpawnDelay = 5f, SpawnTime = 0f;//, DestroyTime = 12f, DestroyDelay = 5f;
 	object[] Prefabs;
 	Queue<GameObject> GameObjectsQueue = new Queue<GameObject>();
 	int numberOfObstaclesToSpawn = 1;
@@ -44,10 +44,6 @@ public class TryObstacleGeneration : MonoBehaviour
 		if(Time.time >= SpawnTime )
 		{
 			SpawnObstacle();
-		}
-		if(Time.time >= DestroyTime)
-		{
-			DestroyObstacle();
 		}
 	}
 
